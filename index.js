@@ -78,19 +78,15 @@ console.log(temperatureCtoF(20))
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(temperature, F, C) {
-    let temp = temperature;
-    let degree = F;
-
-    if(degree == F){
-      return `${temp}${degree}`
-    }else if(degree == C){
-      let temp = temperature*9/5 + 32
-      degree = F;
-      return `${temp}${degree}`
+function temperatureInF(temperature, unit) {
+    if(unit === 'F'){
+      return `${temperature}${unit}`;
+    }else if (unit === 'C'){
+       let temp = temperature*9/5 +32;
+       return `${temp}${unit}`
+      }
     }    
-  }
-  console.log(temperatureInF(20, "F"));
+  console.log(temperatureInF(20, "C"));
   
 
 /**
@@ -126,10 +122,12 @@ console.log(makePersonObject(4, 'brian', 'bramesar5@gmail.com'));
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(person) {
+  getName.name = person
+  return`Hello, my name is ${person}`
+  
 }
-
+console.log(getName('brian'));
 
 /**
  * ### Challenge `appleIndex`
@@ -147,9 +145,9 @@ function getName(/* code here */) {
  * the returned value should be: 2.
 */
 function appleIndex(/* code here */) {
-  /* code here */
+  return appleIndex[2];
 }
-
+console.log(appleIndex());
 /**
  * ### Challenge `isItAnApple`
  * 
