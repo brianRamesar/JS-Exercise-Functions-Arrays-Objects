@@ -60,7 +60,7 @@ function temperatureCtoF(celsius) {
   return Math.ceil(cels);
 }
 
-console.log(temperatureCtoF(24))
+console.log(temperatureCtoF(20))
 /**
  * ### Challenge `temperatureInF`
  * 
@@ -78,10 +78,20 @@ console.log(temperatureCtoF(24))
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
-  /* code here */
-}
+function temperatureInF(temperature, F, C) {
+    let temp = temperature;
+    let degree = F;
 
+    if(degree == F){
+      return `${temp}${degree}`
+    }else if(degree == C){
+      let temp = temperature*9/5 + 32
+      degree = F;
+      return `${temp}${degree}`
+    }    
+  }
+  console.log(temperatureInF(20, "F"));
+  
 
 /**
  * ### Challenge `makePersonObject`
@@ -99,10 +109,10 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(id, name, email) {
+  return {id, name, email};
 }
-
+console.log(makePersonObject(4, 'brian', 'bramesar5@gmail.com'));
 /**
  * ### Challenge `getName`
  * 
