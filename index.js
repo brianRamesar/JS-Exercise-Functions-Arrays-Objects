@@ -144,14 +144,13 @@ console.log(getName({ id: 1, name: 'brian', email: 'leia@leia.com'}));
  * the returned value should be: 2.
 */
 function appleIndex(fruits) {
-  let fruit = fruits;
-  for(let i =0; i< fruit.length; i++){
-    if(fruit[i] === 'apple'){
-      return fruits[i]
-    }
+  for(let i =0; i< fruits.length; i++){
+    if(fruits[i] === 'apple')
+      return i
+    
   }
 }
-console.log(fruits);
+console.log(appleIndex([ 'orange', 'grape', 'apple', 'banana', 'mango' ]));
 
 /**
  * ### Challenge `isItAnApple`
@@ -168,10 +167,19 @@ console.log(fruits);
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(fruits) {
+  let newArray = [];
+  for(let i =0; i < fruits.length; i++){
+    if(fruits[i] === 'apple'){
+      newArray.push(true);
+    }
+    else{
+      newArray.push(false);
+    }
+  }
+  return newArray
 }
-
+console.log(isItAnApple([ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ]))
 
 
 /*
